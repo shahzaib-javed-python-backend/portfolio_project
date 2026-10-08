@@ -1,0 +1,102 @@
+<!-- Contact & Footer Section -->
+<section id="contact" class="py-24 bg-[#080808]">
+    <div class="max-w-6xl mx-auto px-4">
+        
+        <!-- Section Header -->
+        <div class="mb-16 text-center max-w-2xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-neutral-900 border border-neutral-800 text-xs font-mono-dev text-neutral-400 mb-3">
+                <span class="text-emerald-500">$</span> ./connect.sh --secure
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-100">
+                Let's Build Something <span class="text-emerald-400">Extraordinary</span>
+            </h2>
+            <p class="text-neutral-400 mt-2 text-sm sm:text-base">
+                Have a backend project, API architecture requirement, or technical SEO challenge? Send a transmission or connect directly.
+            </p>
+        </div>
+
+        <!-- Contact Box & Info Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-20">
+            
+            <!-- Terminal Contact Form -->
+            <div class="bg-neutral-950 border border-neutral-800 rounded-lg p-6 sm:p-8">
+                <div class="flex items-center justify-between pb-4 mb-6 border-b border-neutral-900 font-mono-dev text-xs text-neutral-400">
+                    <span>transmit_message.py</span>
+                    <span class="text-emerald-400">status: listening</span>
+                </div>
+
+                <!-- Django Flash Messages -->
+                {% if messages %}
+                    <div class="mb-6 p-4 rounded bg-neutral-900 border border-emerald-500/50 text-emerald-400 font-mono-dev text-xs space-y-1">
+                        {% for message in messages %}
+                            <p>&gt; {{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form method="POST" action="" class="space-y-4 font-mono-dev text-sm">
+                    {% csrf_token %}
+                    <div>
+                        <label class="block text-xs text-neutral-400 mb-1.5">&gt; enter_name</label>
+                        <input type="text" name="name" required placeholder="Shahzaib Javed" class="w-full bg-neutral-900 border border-neutral-800 rounded px-4 py-2.5 text-neutral-200 focus:outline-none focus:border-emerald-500 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-neutral-400 mb-1.5">&gt; enter_email</label>
+                        <input type="email" name="email" required placeholder="name@domain.com" class="w-full bg-neutral-900 border border-neutral-800 rounded px-4 py-2.5 text-neutral-200 focus:outline-none focus:border-emerald-500 transition text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-neutral-400 mb-1.5">&gt; enter_message</label>
+                        <textarea name="message" rows="4" required placeholder="Describe your project requirements or technical scope..." class="w-full bg-neutral-900 border border-neutral-800 rounded px-4 py-2.5 text-neutral-200 focus:outline-none focus:border-emerald-500 transition text-sm resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded transition text-sm shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2">
+                        <span>$ send_transmission()</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Direct Connection Info -->
+            <div class="space-y-6">
+                <div class="bg-neutral-950 border border-neutral-800 rounded-lg p-6">
+                    <h3 class="font-mono-dev text-neutral-100 font-bold text-base mb-4 flex items-center gap-2">
+                        <span class="text-emerald-500">&gt;</span> Direct Channels
+                    </h3>
+                    <div class="space-y-4 text-sm font-mono-dev text-neutral-300">
+                        <div class="flex items-center justify-between p-3 rounded bg-neutral-900 border border-neutral-800">
+                            <span class="text-neutral-500 text-xs">Location</span>
+                            <span>Faisalabad / Islamabad, PK</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded bg-neutral-900 border border-neutral-800">
+                            <span class="text-neutral-500 text-xs">GitHub Profile</span>
+                            <a href="https://github.com/shahzaib-javed-python-backend" target="_blank" class="text-emerald-400 hover:underline">github.com/shahzaib-javed-python-backend</a>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded bg-neutral-900 border border-neutral-800">
+                            <span class="text-neutral-500 text-xs">Professional Status</span>
+                            <span class="text-emerald-400">Python Backend Engineer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Note -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-lg p-6">
+                    <p class="text-xs font-mono-dev text-neutral-400 leading-relaxed">
+                        <span class="text-emerald-500 font-bold"># Note:</span> Always open to discussing robust backend architectures, Django/FastAPI microservices, or advanced technical SEO optimizations.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-dev text-xs text-neutral-500">
+            <div>
+                &copy; 2026 Shahzaib Javed. Built with Django & Tailwind CSS.
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/shahzaib-javed-python-backend" target="_blank" class="hover:text-emerald-400 transition">GitHub</a>
+                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+                <a href="#credentials" class="hover:text-emerald-400 transition">Credentials</a>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,36 @@
+{% load static %}
+<!-- Sticky Terminal Navbar -->
+<header class="sticky top-0 z-50 bg-[#080808]/90 backdrop-blur-md border-b border-neutral-800">
+    <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        
+        <!-- Clean Developer Brand -->
+        <a href="{% url 'portfolio_home' %}" class="font-mono-dev text-neutral-100 font-bold text-base md:text-lg flex items-center gap-2 group">
+            <span class="text-emerald-500 group-hover:translate-x-0.5 transition">&gt;</span> 
+            <span>shahzaib<span class="text-neutral-500">.py</span></span>
+        </a>
+        
+        <!-- Navigation Links -->
+        <div class="hidden lg:flex items-center gap-5 text-sm font-medium text-neutral-300 font-mono-dev">
+            <a href="{% url 'portfolio_home' %}#services" class="hover:text-emerald-400 transition">Specialties</a>
+            <a href="{% url 'portfolio_home' %}#projects" class="hover:text-emerald-400 transition">Case Studies</a>
+            <a href="{% url 'portfolio_home' %}#credentials" class="hover:text-emerald-400 transition">Credentials</a>
+            <a href="{% url 'portfolio_home' %}#tech" class="hover:text-emerald-400 transition">Tech Stack</a>
+            <a href="{% url 'blog_list' %}" class="hover:text-emerald-400 transition">Blogs</a>
+            <a href="{% url 'portfolio_home' %}#contact" class="hover:text-emerald-400 transition">Contact</a>
+        </div>
+
+        <!-- Right Actions: Status & Terminal CTA -->
+        <div class="flex items-center gap-3">
+            <!-- Status Badge -->
+            <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-emerald-400 text-xs font-mono-dev">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                status: active
+            </span>
+
+            <!-- Action Button -->
+            <a href="{% url 'portfolio_home' %}#contact" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-md text-sm transition font-mono-dev shadow-lg shadow-emerald-500/10">
+                $ start_project()
+            </a>
+        </div>
+    </nav>
+</header>

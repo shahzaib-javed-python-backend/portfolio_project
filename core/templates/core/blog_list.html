@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-4 py-16 font-mono-dev">
+    <div class="mb-10 border-b border-neutral-800 pb-6">
+        <div class="text-emerald-500 text-xs mb-2">root@shahzaib:~# ./fetch_blogs.sh</div>
+        <h1 class="text-3xl font-bold text-neutral-100">Engineering & Tech Articles</h1>
+        <p class="text-neutral-400 text-sm mt-2">Deep dives into Python, Django backend scalability, and technical SEO architectures.</p>
+    </div>
+
+    <div class="space-y-8">
+        {% for post in posts %}
+        <article class="bg-neutral-950 border border-neutral-800 p-6 rounded-lg hover:border-emerald-500/50 transition">
+            <div class="text-xs text-neutral-500 mb-2">{{ post.created_at|date:"F d, Y" }}</div>
+            <h2 class="text-xl font-semibold text-neutral-100 mb-3">
+                <a href="{% url 'blog_detail' post.slug %}" class="hover:text-emerald-400 transition">{{ post.title }}</a>
+            </h2>
+            <p class="text-neutral-400 text-sm mb-4 leading-relaxed">{{ post.meta_description }}</p>
+            <a href="{% url 'blog_detail' post.slug %}" class="text-emerald-500 hover:text-emerald-400 text-xs flex items-center gap-1">
+                <span>$ read_article --slug={{ post.slug }}</span> &rarr;
+            </a>
+        </article>
+        {% empty %}
+        <div class="text-neutral-500 text-sm">No articles published yet. Check back soon!</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

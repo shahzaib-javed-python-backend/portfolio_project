@@ -4,7 +4,11 @@
     {
       "src": "portfolio_project/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+      "config": { 
+        "maxLambdaSize": "15mb", 
+        "runtime": "python3.11",
+        "requirements": "Django==5.1.4\nwhitenoise==6.7.0\nsqlparse==0.5.0\nasgiref==3.8.1"
+      }
     }
   ],
   "routes": [
